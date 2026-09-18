@@ -8,7 +8,6 @@ import Slide06_Phase5_Marketing from './Slide06_Phase5_Marketing'
 import Slide07_Phase6_Tabletop from './Slide07_Phase6_Tabletop'
 
 export const slides = [
-  Slide00_Timeline,
   Slide01_Action_Summary,
   Slide02_Phase1_Command,
   Slide03_Phase2_Finance,
@@ -16,4 +15,5 @@ export const slides = [
   Slide05_Phase4_Vendors,
   Slide06_Phase5_Marketing,
   Slide07_Phase6_Tabletop,
+  Slide00_Timeline,
 ]

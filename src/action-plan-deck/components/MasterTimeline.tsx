@@ -23,55 +23,60 @@ export default function MasterTimeline() {
         <h3 className="font-display text-base font-semibold text-white">Master timeline</h3>
       </div>
 
-      <ol className="relative border-l border-white/10 pl-6">
-        {MILESTONES.map((m) => {
-          const past = isPastDate(m.date, now)
-          const isNext = m.id === nextId
+      <div className="overflow-x-auto pb-2">
+        <ol className="relative flex min-w-max items-start gap-4 py-6">
+          <div className="absolute left-0 right-0 top-10 h-px bg-white/10" aria-hidden="true" />
 
-          return (
-            <li key={m.id} className="relative mb-5 last:mb-0">
-              <span
-                className={`absolute -left-[31px] mt-1.5 h-3 w-3 rounded-full border-2 ${
-                  isNext
-                    ? 'animate-pulse-slow border-amber-400 bg-amber-400 shadow-neon-cyan'
-                    : past
-                      ? 'border-neon-emerald bg-neon-emerald'
-                      : 'border-white/20 bg-zinc-900'
-                }`}
-                aria-hidden="true"
-              />
-              <div
-                className={`rounded-xl border p-4 backdrop-blur-md ${
-                  isNext ? 'border-amber-400/40 bg-amber-400/5' : 'border-white/10 bg-white/[0.03]'
-                }`}
-              >
-                <div className="flex flex-wrap items-center gap-2">
-                  <span
-                    className={`font-mono text-xs uppercase tracking-wider ${
-                      isNext ? 'text-amber-400' : 'text-zinc-500'
-                    }`}
-                  >
-                    {formatMilestoneDate(m.date)}
-                  </span>
-                  {isNext && (
-                    <span className="rounded-full bg-amber-400 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-950">
-                      Next up
+          {MILESTONES.map((m) => {
+            const past = isPastDate(m.date, now)
+            const isNext = m.id === nextId
+
+            return (
+              <li key={m.id} className="relative min-w-[220px] flex-1 pb-2">
+                <span
+                  className={`absolute left-4 top-8 z-10 h-3 w-3 rounded-full border-2 ${
+                    isNext
+                      ? 'animate-pulse-slow border-amber-400 bg-amber-400 shadow-neon-cyan'
+                      : past
+                        ? 'border-neon-emerald bg-neon-emerald'
+                        : 'border-white/20 bg-zinc-900'
+                  }`}
+                  aria-hidden="true"
+                />
+
+                <div
+                  className={`mt-10 rounded-xl border p-4 backdrop-blur-md ${
+                    isNext ? 'border-amber-400/40 bg-amber-400/5' : 'border-white/10 bg-white/[0.03]'
+                  }`}
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span
+                      className={`font-mono text-xs uppercase tracking-wider ${
+                        isNext ? 'text-amber-400' : 'text-zinc-500'
+                      }`}
+                    >
+                      {formatMilestoneDate(m.date)}
                     </span>
-                  )}
-                  {m.isKeyMeeting && (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-neon-cyan/30 bg-neon-cyan/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-neon-cyan">
-                      <MapPin size={10} />
-                      Venue meeting
-                    </span>
-                  )}
+                    {isNext && (
+                      <span className="rounded-full bg-amber-400 px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-950">
+                        Next up
+                      </span>
+                    )}
+                    {m.isKeyMeeting && (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-neon-cyan/30 bg-neon-cyan/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-neon-cyan">
+                        <MapPin size={10} />
+                        Venue meeting
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-1 text-sm font-semibold text-zinc-100">{m.label}</p>
+                  <p className="mt-0.5 text-xs text-zinc-500">{m.detail}</p>
                 </div>
-                <p className="mt-1 text-sm font-semibold text-zinc-100">{m.label}</p>
-                <p className="mt-0.5 text-xs text-zinc-500">{m.detail}</p>
-              </div>
-            </li>
-          )
-        })}
-      </ol>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
     </div>
   )
 }
