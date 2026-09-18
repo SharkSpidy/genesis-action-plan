@@ -118,7 +118,7 @@ export const BUDGET_LINE_ITEMS: readonly BudgetLineItem[] = [
   {
     id: 'contingency',
     label: 'Contingency Buffer',
-    amount: 200_000,
+    amount: 500_000,
     description: 'Unallocated reserve for overruns and last-mile logistics.',
     accent: 'violet',
   },
@@ -136,7 +136,7 @@ export function assertBudgetIntegrity(): void {
   if (!gamingGroup || gamingGroup.amount !== gamingSum) {
     throw new Error('Budget integrity check failed: gaming sub-track total mismatch.')
   }
-  if (TOTAL_EVENT_BUDGET !== 5_258_000) {
+  if (TOTAL_EVENT_BUDGET !== 5_558_000) {
     throw new Error(`Budget integrity check failed: total is ${TOTAL_EVENT_BUDGET}, expected 52,58,000.`)
   }
 }
