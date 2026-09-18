@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type TouchEvent } from 'react'
-import { slides } from './slides'
+import { slides } from './action-plan-deck/slides'
 import Nav from './components/Nav'
 import ProgressBar from './components/ProgressBar'
 import Hex from './components/Hex'
