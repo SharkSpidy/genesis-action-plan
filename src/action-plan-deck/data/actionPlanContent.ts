@@ -153,7 +153,7 @@ export const RECENT_UPDATES: readonly RecentUpdate[] = [
   {
     id: 'budget',
     label: 'Budget dashboard live',
-    detail: '₹52.58L event budget finalized and verified line-by-line',
+    detail: '₹55.58L event budget finalized and verified line-by-line',
   },
   {
     id: 'sponsor-deck',
