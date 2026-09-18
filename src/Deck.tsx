@@ -9,11 +9,22 @@ export default function Deck() {
   const [index, setIndex] = useState(0)
   const touchStartX = useRef<number | null>(null)
 
+  useEffect(() => {
+    if (total === 0) {
+      setIndex(0)
+      return
+    }
+
+    setIndex((current) => Math.min(Math.max(current, 0), total - 1))
+  }, [total])
+
   const go = useCallback(
     (delta: number) => {
       setIndex((current) => {
+        if (total === 0) return 0
         const next = current + delta
-        if (next < 0 || next >= total) return current
+        if (next < 0) return 0
+        if (next >= total) return total - 1
         return next
       })
     },
@@ -40,14 +51,19 @@ export default function Deck() {
     touchStartX.current = null
   }
 
-  const ActiveSlide = slides[index]
+  if (total === 0) {
+    return null
+  }
+
+  const safeIndex = Math.min(Math.max(index, 0), total - 1)
+  const ActiveSlide = slides[safeIndex]
 
   return (
     <>
-      <ProgressBar index={index} total={total} />
+      <ProgressBar index={safeIndex} total={total} />
       <div className="deck" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         {/* key={index} forces a remount so the enter animation replays per slide */}
-        <div className="slide-mount" key={index}>
+        <div className="slide-mount" key={safeIndex}>
           <ActiveSlide />
         </div>
       </div>
@@ -55,7 +71,7 @@ export default function Deck() {
         <Hex size={7} />
         <span>HIVE — Jain University Proposal</span>
       </div>
-      <Nav index={index} total={total} onPrev={() => go(-1)} onNext={() => go(1)} />
+      <Nav index={safeIndex} total={total} onPrev={() => go(-1)} onNext={() => go(1)} />
     </>
   )
 }
