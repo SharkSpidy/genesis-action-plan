@@ -1,0 +1,6 @@
+/* Utility-only Tailwind layer for the new dashboard-style slides.
+   @tailwind base is intentionally omitted (preflight is off in
+   tailwind.config.js) so the existing App.css theme for the other
+   slides is left completely untouched. */
+@tailwind components;
+@tailwind utilities;
