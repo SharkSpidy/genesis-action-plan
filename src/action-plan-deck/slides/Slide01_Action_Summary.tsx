@@ -2,7 +2,6 @@ import type { LucideIcon } from 'lucide-react'
 import { Building2, Clock, Layers, Sparkles } from 'lucide-react'
 import { EVENT_META, RECENT_UPDATES } from '../data/actionPlanContent'
 import PhaseTimeline from '../components/PhaseTimeline'
-import MasterTimeline from '../components/MasterTimeline'
 import { ACCENT_STYLES, type Accent } from '../../lib/accent'
 
 interface SummaryCardProps {
@@ -98,11 +97,6 @@ export default function Slide01_Action_Summary() {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Master timeline — dated milestones, starting with the Jain venue meeting */}
-        <div className="mb-10">
-          <MasterTimeline />
         </div>
 
         {/* Phase progress preview — nothing active yet on the summary slide */}

@@ -1,9 +1,8 @@
 import type { LucideIcon } from 'lucide-react'
 import { Clapperboard, FileSignature, Gamepad2, Megaphone, Palette, Settings2, Users } from 'lucide-react'
-import { OPS_PHASES, MILESTONES } from '../data/actionPlanContent'
+import { OPS_PHASES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
-import { formatMilestoneDate } from '../lib/formatDate'
 
 interface DepartmentHead {
   readonly id: string
@@ -21,7 +20,6 @@ const DEPARTMENT_HEADS: readonly DepartmentHead[] = [
 ]
 
 const phase = OPS_PHASES[0]
-const venueMeeting = MILESTONES.find((m) => m.id === 'venue-meeting')
 
 export default function Slide02_Phase1_Command() {
   return (
@@ -33,18 +31,6 @@ export default function Slide02_Phase1_Command() {
           phase={phase}
           subtitle="Without a confirmed venue, sponsors will not commit. This phase locks both the leadership structure and the ground it will operate on."
         />
-
-        {venueMeeting && (
-          <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl border border-amber-400/40 bg-amber-400/5 px-4 py-3 backdrop-blur-md">
-            <span className="rounded-full bg-amber-400 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-950">
-              Confirmed
-            </span>
-            <p className="text-sm text-zinc-200">
-              <span className="font-semibold text-amber-400">{formatMilestoneDate(venueMeeting.date)}</span> —
-              {' '}first meeting with the Jain University venue team.
-            </p>
-          </div>
-        )}
 
         <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-5">
           {/* Department heads */}

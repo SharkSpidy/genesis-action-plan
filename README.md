@@ -89,3 +89,13 @@ milestones once the MOU locks real February dates.
 as "Next up" using the real current date — no manual updating needed as time passes.
 `Slide02_Phase1_Command.tsx` also surfaces the Sept 30 meeting directly as a confirmed
 callout, since that's the phase it belongs to.
+
+---
+
+## Correction: timeline is its own slide, not merged into others
+
+`Slide01_Action_Summary.tsx` and `Slide02_Phase1_Command.tsx` are back to their original
+content — the timeline is not folded into them. Instead, `Slide00_Timeline.tsx` is a new,
+separate slide in `action-plan-deck/slides/` that renders `MasterTimeline` on its own.
+Everything else about the milestone data (`MILESTONES`, `PLAN_START_DATE`,
+`ASSUMED_EVENT_DATE` in `actionPlanContent.ts`) is unchanged.
