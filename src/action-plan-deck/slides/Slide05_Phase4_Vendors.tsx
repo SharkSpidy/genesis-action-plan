@@ -1,5 +1,5 @@
 import { FileCheck2, Server, Wrench, Zap } from 'lucide-react'
-import { OPS_PHASES } from '../data/actionPlanContent'
+import { OPS_PHASES, PHASE_ESTIMATED_DATES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
 
@@ -25,7 +25,11 @@ export default function Slide05_Phase4_Vendors() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(34,211,238,0.08),transparent_45%)]" />
 
       <div className="relative">
-        <PhaseHeader phase={phase} subtitle="Securing the backbone of the 48-hour continuous event." />
+        <PhaseHeader
+          phase={phase}
+          subtitle="Securing the backbone of the 48-hour continuous event."
+          estimatedDate={PHASE_ESTIMATED_DATES[phase.id]}
+        />
 
         <div className="mb-6 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur-md">
           <FileCheck2 size={16} className="text-neon-cyan" />

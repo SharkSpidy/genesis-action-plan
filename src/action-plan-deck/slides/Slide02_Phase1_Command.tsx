@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { Clapperboard, FileSignature, Gamepad2, Megaphone, Palette, Settings2, Users } from 'lucide-react'
-import { OPS_PHASES } from '../data/actionPlanContent'
+import { OPS_PHASES, PHASE_ESTIMATED_DATES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
 
@@ -36,6 +36,7 @@ export default function Slide02_Phase1_Command() {
         <PhaseHeader
           phase={phase}
           subtitle="Without a confirmed venue, sponsors will not commit. This phase locks both the leadership structure and the ground it will operate on."
+          estimatedDate={PHASE_ESTIMATED_DATES[phase.id]}
         />
 
         <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-5">

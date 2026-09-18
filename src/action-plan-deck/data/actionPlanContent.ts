@@ -134,6 +134,15 @@ export const MILESTONES: readonly Milestone[] = [
   },
 ]
 
+export const PHASE_ESTIMATED_DATES: Readonly<Record<number, string>> = {
+  1: '30 Sep 2026',
+  2: '25 Oct 2026',
+  3: '22 Nov 2026',
+  4: '20 Dec 2026',
+  5: '05 Jan 2027',
+  6: '21 Jan 2027',
+}
+
 /* ---------------------------------------------------------------------- */
 /*  Recent updates strip (Slide 1)                                        */
 /* ---------------------------------------------------------------------- */

@@ -1,5 +1,5 @@
 import { Clapperboard, Landmark, Sparkles } from 'lucide-react'
-import { OPS_PHASES } from '../data/actionPlanContent'
+import { OPS_PHASES, PHASE_ESTIMATED_DATES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
 import { BUDGET_LINE_ITEMS } from '../../data/budget'
@@ -22,6 +22,7 @@ export default function Slide04_Phase3_VIP() {
         <PhaseHeader
           phase={phase}
           subtitle="Government bureaucracy and celebrity PR management both run on their own clock. Start both tracks now."
+          estimatedDate={PHASE_ESTIMATED_DATES[phase.id]}
         />
 
         <div className="mb-8 grid grid-cols-1 gap-5 lg:grid-cols-2">

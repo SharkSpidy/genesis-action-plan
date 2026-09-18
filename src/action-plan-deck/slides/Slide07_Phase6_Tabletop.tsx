@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { HeartPulse, Radio, ShieldAlert, Users2, Wifi } from 'lucide-react'
-import { OPS_PHASES } from '../data/actionPlanContent'
+import { OPS_PHASES, PHASE_ESTIMATED_DATES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
 
@@ -46,7 +46,11 @@ export default function Slide07_Phase6_Tabletop() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(251,113,133,0.08),transparent_50%)]" />
 
       <div className="relative">
-        <PhaseHeader phase={phase} subtitle="Identify the breaking points before event day, with the full core committee in the room." />
+        <PhaseHeader
+          phase={phase}
+          subtitle="Identify the breaking points before event day, with the full core committee in the room."
+          estimatedDate={PHASE_ESTIMATED_DATES[phase.id]}
+        />
 
         <div className="mb-8">
           <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-500">

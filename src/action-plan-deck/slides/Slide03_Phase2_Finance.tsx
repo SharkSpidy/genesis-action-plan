@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { Building, Cpu, FileStack, Soup, Target } from 'lucide-react'
-import { OPS_PHASES } from '../data/actionPlanContent'
+import { OPS_PHASES, PHASE_ESTIMATED_DATES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
 import { PRIZE_POOL_TOTAL, TOTAL_EVENT_BUDGET } from '../../data/budget'
@@ -27,7 +27,11 @@ export default function Slide03_Phase2_Finance() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_15%,rgba(251,191,36,0.08),transparent_45%)]" />
 
       <div className="relative">
-        <PhaseHeader phase={phase} subtitle="Your primary tool for raising working capital before major outlays begin." />
+        <PhaseHeader
+          phase={phase}
+          subtitle="Your primary tool for raising working capital before major outlays begin."
+          estimatedDate={PHASE_ESTIMATED_DATES[phase.id]}
+        />
 
         <div className="mb-8 grid grid-cols-1 gap-6 lg:grid-cols-5">
           {/* Master deck */}

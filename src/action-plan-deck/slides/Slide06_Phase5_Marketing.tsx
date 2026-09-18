@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { Gamepad2, Globe, Megaphone, School, TicketCheck } from 'lucide-react'
-import { OPS_PHASES } from '../data/actionPlanContent'
+import { OPS_PHASES, PHASE_ESTIMATED_DATES } from '../data/actionPlanContent'
 import PhaseHeader from '../components/PhaseHeader'
 import PhaseTimeline from '../components/PhaseTimeline'
 
@@ -42,7 +42,11 @@ export default function Slide06_Phase5_Marketing() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(52,211,153,0.08),transparent_45%)]" />
 
       <div className="relative">
-        <PhaseHeader phase={phase} subtitle="Drive initial cash flow through early registrations, not just brand awareness." />
+        <PhaseHeader
+          phase={phase}
+          subtitle="Drive initial cash flow through early registrations, not just brand awareness."
+          estimatedDate={PHASE_ESTIMATED_DATES[phase.id]}
+        />
 
         <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {TRACKS.map((t) => {

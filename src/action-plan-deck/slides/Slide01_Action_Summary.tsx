@@ -1,7 +1,8 @@
 import type { LucideIcon } from 'lucide-react'
-import { Building2, Clock, Layers, Sparkles } from 'lucide-react'
-import { EVENT_META, RECENT_UPDATES } from '../data/actionPlanContent'
+import { Building2, CalendarRange, Clock, Layers, Sparkles } from 'lucide-react'
+import { EVENT_META, MILESTONES, RECENT_UPDATES } from '../data/actionPlanContent'
 import PhaseTimeline from '../components/PhaseTimeline'
+import { formatMilestoneDate } from '../lib/formatDate'
 import { ACCENT_STYLES, type Accent } from '../../lib/accent'
 
 interface SummaryCardProps {
@@ -27,6 +28,8 @@ function SummaryCard({ icon: Icon, label, value, sub, accent }: SummaryCardProps
 }
 
 export default function Slide01_Action_Summary() {
+  const timelineWindow = `${formatMilestoneDate(MILESTONES[0].date)} – ${formatMilestoneDate(MILESTONES[MILESTONES.length - 1].date)}`
+
   return (
     <section className="relative flex h-screen w-full flex-col justify-center overflow-y-auto bg-zinc-950 px-6 py-10 font-body text-zinc-100 sm:px-10 lg:px-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(34,211,238,0.08),transparent_45%),radial-gradient(circle_at_85%_80%,rgba(52,211,153,0.07),transparent_45%)]" />
@@ -42,6 +45,11 @@ export default function Slide01_Action_Summary() {
         <p className="mb-8 max-w-2xl text-base text-zinc-400 sm:text-lg">
           Six phases, one command structure. This is the internal execution plan the core
           committee is accountable to.
+        </p>
+
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-neon-emerald/30 bg-neon-emerald/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-neon-emerald">
+          <CalendarRange size={12} />
+          Estimated window: {timelineWindow}
         </p>
 
         {/* Top-line metric cards */}
