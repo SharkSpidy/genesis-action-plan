@@ -17,6 +17,12 @@ const DEPARTMENT_HEADS: readonly DepartmentHead[] = [
   { id: 'gaming', icon: Gamepad2, department: 'Gaming' },
   { id: 'marketing', icon: Megaphone, department: 'Marketing' },
   { id: 'sponsorships', icon: Users, department: 'Sponsorships' },
+  { id: 'pro-show', icon: Clapperboard, department: 'Pro Show' },
+  { id: 'auto-show', icon: Gamepad2, department: 'Auto-Show' },
+  { id: 'logistics', icon: Settings2, department: 'Logistics' },
+  { id: 'discipline', icon: Users, department: 'Discipline' },
+  { id: 'media', icon: Megaphone, department: 'Media' },
+  { id: 'hackathon', icon: Gamepad2, department: 'Hackathon' },
 ]
 
 const phase = OPS_PHASES[0]
@@ -36,7 +42,7 @@ export default function Slide02_Phase1_Command() {
           {/* Department heads */}
           <div className="lg:col-span-3">
             <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
-              Appoint department heads — your executive team
+              Core departments required to run this
             </h3>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {DEPARTMENT_HEADS.map((d) => {
@@ -53,35 +59,6 @@ export default function Slide02_Phase1_Command() {
                   </div>
                 )
               })}
-            </div>
-
-            <div className="mt-6">
-              <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
-                Core departments required to run this
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  'Operations',
-                  'Creative',
-                  'Film',
-                  'Gaming',
-                  'Marketing',
-                  'Sponsorships',
-                  'Pro Show',
-                  'Auto-Show',
-                  'Logistics',
-                  'Discipline',
-                  'Media',
-                  'Hackathon',
-                ].map((department) => (
-                  <span
-                    key={department}
-                    className="rounded-full border border-neon-cyan/30 bg-neon-cyan/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-neon-cyan"
-                  >
-                    {department}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
 
