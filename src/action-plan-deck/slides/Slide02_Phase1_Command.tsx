@@ -54,6 +54,35 @@ export default function Slide02_Phase1_Command() {
                 )
               })}
             </div>
+
+            <div className="mt-6">
+              <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
+                Core departments required to run this
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Operations',
+                  'Creative',
+                  'Film',
+                  'Gaming',
+                  'Marketing',
+                  'Sponsorships',
+                  'Pro Show',
+                  'Auto-Show',
+                  'Logistics',
+                  'Discipline',
+                  'Media',
+                  'Hackathon',
+                ].map((department) => (
+                  <span
+                    key={department}
+                    className="rounded-full border border-neon-cyan/30 bg-neon-cyan/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-neon-cyan"
+                  >
+                    {department}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Venue lock / MOU */}
